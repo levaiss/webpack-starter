@@ -1,0 +1,32 @@
+.app-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: $z-preloader;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app {
+  &-preloader {
+    transition: opacity 0.2s ease, visibility 0s linear 0.2s;
+  }
+
+  &--loaded {
+    .app-preloader {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    .app-content {
+      transition: opacity 0.2s ease;
+      opacity: 1;
+    }
+  }
+}

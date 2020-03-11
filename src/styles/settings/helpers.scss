@@ -1,0 +1,110 @@
+.text {
+
+  &-right {
+    text-align: right;
+  }
+
+  &-left {
+    text-align: left;
+  }
+
+  &-center {
+    text-align: center
+  }
+
+  &-uppercase {
+    text-transform: uppercase;
+  }
+}
+
+.font {
+
+  &-accent {
+    font-family: $font-accent;
+  }
+
+  &-light {
+    font-weight: $light;
+  }
+
+  &-normal {
+    font-weight: $regular;
+  }
+
+  &-medium {
+    font-weight: $medium;
+  }
+
+  &-semi {
+    font-weight: $semi;
+  }
+
+  &-bold {
+    font-weight: $bold;
+  }
+}
+
+.color {
+
+  &-red {
+    color: $red;
+  }
+
+  &-green {
+    color: $green;
+  }
+
+  &-lightblue {
+    color: $lightblue;
+  }
+}
+
+.table {
+  display: table;
+  width: 100%;
+
+  .th, .tr {
+    display: table-row;
+  }
+
+  .td {
+    display: table-cell;
+  }
+}
+
+.link-underline {
+  text-decoration: underline;
+}
+
+.app--desktop {
+  .desktop-hidden {
+    display: none;
+  }
+
+  .container {
+    max-width: em(1280);
+    margin: 0 auto;
+  }
+}
+
+.app--mobile {
+  .mobile-hidden {
+    display: none;
+  }
+
+  .container {
+    width: 100%;
+    height: auto;
+    padding: 0 em(20);
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .tablet-hidden {
+      display: none;
+    }
+  }
+}
+
+.oHidden {
+  overflow: hidden;
+}
