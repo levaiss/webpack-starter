@@ -2,44 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e03b32a-5189-4b5d-9351-0ad98969f46e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scripts/tools/Helpers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/components/btn.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/components/index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/components/preloader.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/components/spiner.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/layouts/footer.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/layouts/header.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/layouts/index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/layouts/main.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/pages/index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/settings/base.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/settings/fonts.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/settings/helpers.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/settings/index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/settings/libs.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/settings/mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/settings/normilize.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/settings/transitions.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/settings/typography.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/settings/variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Roboto/Roboto-Regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Roboto/Roboto-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Roboto/Roboto-Regular.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dependabot/config.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/includes/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/includes/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/includes/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/includes/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/layouts/section.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack/webpack.common.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack/webpack.common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack/webpack.config.prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack/webpack.config.prod.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/components/spiner.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/spiner.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -119,8 +84,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
@@ -136,7 +101,7 @@
       <updated>1581328828242</updated>
       <workItem from="1581328829469" duration="5266000" />
       <workItem from="1583916886839" duration="46000" />
-      <workItem from="1583916937325" duration="1463000" />
+      <workItem from="1583916937325" duration="2498000" />
     </task>
     <servers />
   </component>
