@@ -1,4 +1,6 @@
 import '../styles/index.scss';
+import './icons';
+
 import Helper from './tools/Helpers';
 
 import Typograf from 'typograf';

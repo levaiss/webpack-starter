@@ -28,11 +28,12 @@ module.exports = {
             minify: {
                 collapseWhitespace: false
             }
-        })
+        }),
     ],
     resolve: {
         alias: {
-            '~': Path.resolve(__dirname, '../src')
+            '~': Path.resolve(__dirname, '../src'),
+            '@': Path.resolve(__dirname, '../'),
         }
     },
     module: {
@@ -52,7 +53,14 @@ module.exports = {
                 type: 'javascript/auto'
             },
             {
-                test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+                test: /\.svg$/,
+                use: [
+                    'svg-sprite-loader',
+                    'svgo-loader'
+                ]
+            },
+            {
+                test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2)(\?.*)?$/,
                 use: {
                     loader: 'file-loader',
                     options: {
