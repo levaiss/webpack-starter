@@ -30,9 +30,8 @@ const LAYOUT_SETTINGS = {
 };
 
 if (Helper.isIE()) {
-    Helper.forEachPoll();
-    // Helper.createMatches();
-    // Helper.createClosest();
+    //Helper.createMatches();
+    //Helper.createClosest();
     document.getElementById('app').classList.add('app--ie');
 }
 
@@ -40,9 +39,9 @@ if (Helper.iOS()) {
     document.getElementById('app').classList.add('app--ios');
 }
 
-window.App = {
-    init() {
-        this.el = document.getElementById('app');
+class App {
+    constructor({el}) {
+        this.el = el;
         this.elClassList = this.el.classList;
         this.deviceData = null;
         this.deviceOrientation = null;
@@ -55,10 +54,8 @@ window.App = {
 
         window.addEventListener('resize', this.listenResize.bind(this));
         window.addEventListener('scroll', this.listenScroll.bind(this));
-        window.onload = () => {
-            this.elClassList.add('app--loaded');
-        };
-    },
+        window.addEventListener('load', () => this.elClassList.add('app--loaded'));
+    }
     setLayoutSettings() {
         this.windowW = window.innerWidth;
         this.windowH = window.innerHeight;
@@ -73,7 +70,7 @@ window.App = {
         this.deviceData = this.device;
 
         this.el.style.cssText = `font-size: ${this.fSize()}px; --vh: ${this.vh()}px`;
-    },
+    }
     getOrientation() {
         let result = null;
 
@@ -86,7 +83,7 @@ window.App = {
         }
 
         return result;
-    },
+    }
     listenResize() {
         let prevDeviceOrientation = this.deviceOrientation;
         this.deviceOrientation = this.getOrientation();
@@ -98,10 +95,10 @@ window.App = {
         if (this.device !== 'mobile' || window.innerWidth > 1023) {
             this.setLayoutSettings();
         }
-    },
+    }
     listenScroll() {
         let scrollY = window.scrollY || window.pageYOffset;
-    },
+    }
     fSize() {
         let device = (this.device === 'mobile' && this.windowW >= 640) ? 'tablet' : this.device;
 
@@ -110,10 +107,10 @@ window.App = {
             Math.min(Math.max(LAYOUT_SETTINGS[device].minWidth, this.windowW) / LAYOUT_SETTINGS[device].defaultWidth)
         ).toFixed(2);
         //Math.max(LAYOUT_SETTINGS[this.device].minHeight, this.windowH) / LAYOUT_SETTINGS[this.device].defaultHeight
-    },
+    }
     vh() {
         return this.windowH * 0.01;
-    },
+    }
     initTypograf(container) {
         let Tp = new Typograf({locale: ['ru', 'en-US']});
         let els = container.querySelectorAll('[data-typograf]'), i;
@@ -122,7 +119,7 @@ window.App = {
         for (i = 0; i < els.length; i++) {
             els[i].innerHTML = Tp.execute(els[i].innerHTML);
         }
-    },
-};
+    }
+}
 
-App.init();
+window.App = new App({el: document.getElementById('app')});
