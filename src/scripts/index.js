@@ -1,28 +1,41 @@
 import '../styles/index.scss';
 import Helper from './tools/Helpers';
 
+import Typograf from 'typograf';
+
 const LAYOUT_SETTINGS = {
     desktop: {
-        defaultFont: 16,
-        defaultWidth: 1600,
-        defaultHeight: 900,
+        defaultFont: 20,
+        defaultWidth: 1920,
+        defaultHeight: 1080,
         minWidth: 1200,
         minHeight: 640
     },
+    tablet: {
+        defaultFont: 20,
+        defaultWidth: 720,
+        defaultHeight: 1024,
+        minWidth: 640,
+        minHeight: 800
+    },
     mobile: {
-        defaultFont: 32,
-        defaultWidth: 640,
-        defaultHeight: 1100,
+        defaultFont: 16,
+        defaultWidth: 320,
+        defaultHeight: 568,
         minWidth: 320,
         minHeight: 568
     }
 };
 
 if (Helper.isIE()) {
-    // Helper.forEachPoll();
+    Helper.forEachPoll();
     // Helper.createMatches();
     // Helper.createClosest();
     document.getElementById('app').classList.add('app--ie');
+}
+
+if (Helper.iOS()) {
+    document.getElementById('app').classList.add('app--ios');
 }
 
 window.App = {
@@ -30,10 +43,16 @@ window.App = {
         this.el = document.getElementById('app');
         this.elClassList = this.el.classList;
         this.deviceData = null;
+        this.deviceOrientation = null;
 
         this.setLayoutSettings();
 
+        this.initTypograf(this.el);
+        this.setLayoutSettings();
+        this.listenScroll();
+
         window.addEventListener('resize', this.listenResize.bind(this));
+        window.addEventListener('scroll', this.listenScroll.bind(this));
         window.onload = () => {
             this.elClassList.add('app--loaded');
         };
@@ -51,28 +70,57 @@ window.App = {
         this.elClassList.add(`app--${this.device}`);
         this.deviceData = this.device;
 
-        if (this.windowW > 767 && this.windowW < 1023) {
-            this.el.style.cssText = `--vh: ${this.vh()}px`;
-        } else {
-            this.el.style.cssText = `font-size: ${this.fSize()}px; --vh: ${this.vh()}px`;
+        this.el.style.cssText = `font-size: ${this.fSize()}px; --vh: ${this.vh()}px`;
+    },
+    getOrientation() {
+        let result = null;
+
+        if (window.matchMedia("(orientation: portrait)").matches) {
+            result = 'portrait';
         }
+
+        if (window.matchMedia("(orientation: landscape)").matches) {
+            result = 'landscape';
+        }
+
+        return result;
     },
     listenResize() {
+        let prevDeviceOrientation = this.deviceOrientation;
+        this.deviceOrientation = this.getOrientation();
+
+        if (this.device === 'mobile' && (prevDeviceOrientation !== this.deviceOrientation)) {
+            this.setLayoutSettings();
+        }
+
         if (this.device !== 'mobile' || window.innerWidth > 1023) {
             this.setLayoutSettings();
         }
     },
+    listenScroll() {
+        let scrollY = window.scrollY || window.pageYOffset;
+    },
     fSize() {
+        let device = (this.device === 'mobile' && this.windowW >= 640) ? 'tablet' : this.device;
+
         return (
-            LAYOUT_SETTINGS[this.device].defaultFont *
-            Math.min(
-                Math.max(LAYOUT_SETTINGS[this.device].minWidth, this.windowW) / LAYOUT_SETTINGS[this.device].defaultWidth,
-                Math.max(LAYOUT_SETTINGS[this.device].minHeight, this.windowH) / LAYOUT_SETTINGS[this.device].defaultHeight)
+            LAYOUT_SETTINGS[device].defaultFont *
+            Math.min(Math.max(LAYOUT_SETTINGS[device].minWidth, this.windowW) / LAYOUT_SETTINGS[device].defaultWidth)
         ).toFixed(2);
+        //Math.max(LAYOUT_SETTINGS[this.device].minHeight, this.windowH) / LAYOUT_SETTINGS[this.device].defaultHeight
     },
     vh() {
         return this.windowH * 0.01;
-    }
+    },
+    initTypograf(container) {
+        let Tp = new Typograf({locale: ['ru', 'en-US']});
+        let els = container.querySelectorAll('[data-typograf]'), i;
+        els = Array.from(els);
+
+        for (i = 0; i < els.length; i++) {
+            els[i].innerHTML = Tp.execute(els[i].innerHTML);
+        }
+    },
 };
 
 App.init();

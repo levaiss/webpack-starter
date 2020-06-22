@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e03b32a-5189-4b5d-9351-0ad98969f46e" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/scripts/http/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scripts/tools/Events-types.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scripts/tools/Local-store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scripts/tools/Url.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/spiner.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/spiner.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,14 +17,15 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="260" />
-    <option name="y" value="85" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
   </component>
   <component name="ProjectId" id="1YyZdzXKODZ0pZhzYGzV2LB5jyr" />
   <component name="PropertiesComponent">
@@ -37,12 +43,13 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Work\webpack-starter" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\webpack-starter\src\scripts\tools" />
       <recent name="C:\Work\webpack-starter\src\styles" />
       <recent name="C:\Work\webpack-starter\src\assets" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Work\webpack-starter" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -102,6 +109,7 @@
       <workItem from="1581328829469" duration="5266000" />
       <workItem from="1583916886839" duration="46000" />
       <workItem from="1583916937325" duration="2498000" />
+      <workItem from="1592845739652" duration="2852000" />
     </task>
     <servers />
   </component>
