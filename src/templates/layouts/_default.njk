@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Webpack starter</title>
+    <title>Webpack starter | {{ title }}</title>
     <link rel="shortcut icon" href="/static/favicon.png" type="image/x-icon">
     <meta name="title" content="">
     <meta name="description" content="">
@@ -31,13 +31,14 @@
         body {
             background-color: #FFF;
         }
+
         .app-content {
             opacity: 0;
         }
     </style>
 </head>
 <body>
-<div id="app" class="app">
+<div id="app" class="app {{ app_class }}">
     <div class="app-preloader">
         <div class='sk-double-bounce'>
             <div class='sk-child sk-double-bounce-1'></div>
@@ -45,8 +46,12 @@
         </div>
     </div>
     <div class="app-content">
-        <header class="header" role="banner">
-            <div class="container">
+        {% include "includes/_header.njk" %}
 
-            </div>
-        </header>
+        {% block content %}
+        {% endblock %}
+
+        {% include "includes/_footer.njk" %}
+    </div>
+</div>
+</body>

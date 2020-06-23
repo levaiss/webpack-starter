@@ -1,10 +1,14 @@
-${require('./includes/header.html')}
+{% set title = "Home" %}
+{% set app_class = "app--home" %}
+{% extends "layouts/_default.njk" %}
+
+{% block content %}
 
 <main class="main" role="main">
     <section class="section">
         <div class="container">
             <h1 class="title title-md color-lightblue">
-                 Webpack starter
+                Webpack starter
                 <svg>
                     <use xlink:href="#icon-facebook"></use>
                 </svg>
@@ -13,4 +17,4 @@ ${require('./includes/header.html')}
     </section>
 </main>
 
-${require('./includes/footer.html')}
+{% endblock %}

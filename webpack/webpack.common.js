@@ -24,7 +24,14 @@ module.exports = {
         ]),
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: Path.resolve(__dirname, '../src/index.html'),
+            template: Path.resolve(__dirname, '../src/templates/index.njk'),
+            minify: {
+                collapseWhitespace: false
+            }
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'test.html',
+            template: Path.resolve(__dirname, '../src/templates/test.njk'),
             minify: {
                 collapseWhitespace: false
             }
@@ -39,13 +46,17 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.html$/,
-                use: [ {
-                    loader: 'html-loader',
-                    options: {
-                        interpolate: true
+                test: /\.njk$/,
+                use: [
+                    {
+                        loader: 'simple-nunjucks-loader',
+                        options: {
+                            searchPaths: [
+                                './src/templates/'
+                            ]
+                        }
                     }
-                }],
+                ]
             },
             {
                 test: /\.mjs$/,
