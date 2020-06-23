@@ -2,19 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e03b32a-5189-4b5d-9351-0ad98969f46e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/templates/includes/_footer.njk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/templates/includes/_header.njk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/templates/index.njk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/settings/icons.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desktop.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/includes/footer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/includes/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/layouts/_default.njk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/test.njk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack/webpack.common.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack/webpack.common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/components/btn.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/btn.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/components/spiner.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/spiner.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/settings/helpers.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/settings/helpers.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/settings/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/settings/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/settings/mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/settings/mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/settings/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/settings/variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/index.njk" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/index.njk" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +43,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/webpack/webpack.common.js" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -60,14 +56,14 @@
     <property name="settings.editor.selected.configurable" value="settings.webpack" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\webpack-starter\src\templates" />
+      <recent name="C:\Work\webpack-starter" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Projects\webpack-starter\src\scripts\tools" />
       <recent name="C:\Work\webpack-starter\src\styles" />
       <recent name="C:\Work\webpack-starter\src\assets" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Projects\webpack-starter\src\templates" />
-      <recent name="C:\Work\webpack-starter" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -115,7 +111,7 @@
     </recent_temporary>
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>C:\Users\DVLP\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
