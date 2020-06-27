@@ -1,0 +1,10 @@
+.icon {
+  display: inline-block;
+  line-height: 1;
+
+  &--facebook {
+    width: em(24);
+    height: em(24);
+    fill: currentColor;
+  }
+}

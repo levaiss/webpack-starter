@@ -8,21 +8,25 @@ $base-font-size: 16;
 // -------------------------
 $white:                     #ffffff !default;
 $black:                     #000000 !default;
-$grey:                      #f2f1f1 !default;
-$lightblue:                      lightblue !default;
-$red:                       #e10007 !default;
-$green:                     #1d7337 !default;
+$dark:                      #1C202E !default;
+$grey:                      #6a7077 !default;
+$lightgrey:                 rgba(0, 0, 0, 0.45) !default;
+$blue:                      #000A63 !default;
+$red:                       #E30611 !default;
+$green:                     #00C294 !default;
 
 
 // Scaffolding
 // -------------------------
 $bodyBackground:            $white !default;
 $textColor:                 $black !default;
+$hrBorder:                  $black !default;
+
 
 // Links
 // -------------------------
-$linkColor:                 $lightblue !default;
-$linkColorHover:            darken($linkColor, 10%) !default;
+$linkColor:                 $blue !default;
+$linkColorHover:            darken($blue, 10%) !default;
 
 
 // Typography
@@ -44,7 +48,7 @@ $black:                     900 !default;
 $baseLineHeight:            20px !default;
 
 $font-default: "Roboto", $sans;
-$font-accent: "Arial", $sans;
+$font-accent: "", $sans;
 
 // Borders
 // -------------------------
@@ -52,17 +56,18 @@ $borderColor:               $black !default;
 
 // Buttons
 // -------------------------
-$btnBackground:             $black !default;
-
+$btnAccentBackground:             $blue !default;
+$btnAccentBackgroundPressed:      darken($blue, 5%) !default;
+$btnDisabledBackground:           #F4F7F9 !default;
+$btnDisabledColor:                #CDD7E0 !default;
 
 // Breakpoints
 // -------------------------
 $mobileWidth:               "480px";
 $largeMobileWidth:          "600px";
 $tabletWidth:               "768px";
-$desktopWidth:              "992px";
+$desktopWidth:              "1024px";
 $largeDesktopWidth:         "1392px";
-
 
 // Easing presets
 // --------------------------

@@ -53,58 +53,37 @@
   &-green {
     color: $green;
   }
-
-  &-lightblue {
-    color: $lightblue;
-  }
-}
-
-.table {
-  display: table;
-  width: 100%;
-
-  .th, .tr {
-    display: table-row;
-  }
-
-  .td {
-    display: table-cell;
-  }
 }
 
 .link-underline {
   text-decoration: underline;
 }
 
-.app--desktop {
+.container {
+  width: 100%;
+  height: auto;
+  max-width: em(1240);
+  margin: 0 auto;
+
+  @include tablet {
+    padding: 0 em(28);
+  }
+}
+
+@include desktop {
   .desktop-hidden {
     display: none;
   }
+}
 
-  .container {
-    max-width: em(1280);
-    margin: 0 auto;
+@include tablet-only {
+  .tablet-hidden {
+    display: none;
   }
 }
 
-.app--mobile {
+@include mobile-only {
   .mobile-hidden {
     display: none;
   }
-
-  .container {
-    width: 100%;
-    height: auto;
-    padding: 0 em(20);
-  }
-
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
-    .tablet-hidden {
-      display: none;
-    }
-  }
-}
-
-.oHidden {
-  overflow: hidden;
 }
