@@ -2,6 +2,7 @@ const Path = require('path');
 const Webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
+const ip = require('ip');
 
 module.exports = merge(common, {
     mode: 'development',
@@ -10,7 +11,10 @@ module.exports = merge(common, {
         chunkFilename: 'js/[name].chunk.js'
     },
     devServer: {
-        inline: true
+        inline: true,
+        host: ip.address(),
+        port: 3003,
+        disableHostCheck: true
     },
     plugins: [
         new Webpack.DefinePlugin({

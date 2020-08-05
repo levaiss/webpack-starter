@@ -3,6 +3,18 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const routerConfig = [
+    {
+        name: 'index',
+        template: 'index'
+    },
+    {
+        name: 'test',
+        template: 'test'
+    },
+];
+
+
 module.exports = {
     entry: {
         app: Path.resolve(__dirname, '../src/scripts/index.js')
@@ -11,31 +23,30 @@ module.exports = {
         path: Path.join(__dirname, '../build'),
         filename: 'js/[name].js'
     },
-    optimization: {
-        splitChunks: {
-            chunks: 'all',
-            name: false
-        }
-    },
+    /*    optimization: {
+            splitChunks: {
+                chunks: 'all',
+                name: false
+            }
+        },*/
     plugins: [
         new CleanWebpackPlugin(),
         new CopyWebpackPlugin([
             {from: Path.resolve(__dirname, '../static'), to: 'static'}
         ]),
-        new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: Path.resolve(__dirname, '../src/templates/index.njk'),
-            minify: {
-                collapseWhitespace: false
-            }
-        }),
-        new HtmlWebpackPlugin({
-            filename: 'test.html',
-            template: Path.resolve(__dirname, '../src/templates/test.njk'),
-            minify: {
-                collapseWhitespace: false
-            }
-        }),
+        ...routerConfig.reduce((routing, routeConfig) => {
+            let route = new HtmlWebpackPlugin({
+                filename: `${routeConfig.name}.html`,
+                template: Path.resolve(__dirname, `../src/templates/${routeConfig.template}.njk`),
+                minify: {
+                    collapseWhitespace: false
+                }
+            });
+
+            routing.push(route);
+
+            return routing;
+        }, [])
     ],
     resolve: {
         alias: {
