@@ -39,6 +39,8 @@ if (Helper.iOS()) {
     document.getElementById('app').classList.add('app--ios');
 }
 
+import Form from "./modules/Form";
+
 class App {
     constructor({el}) {
         this.el = el;
@@ -51,6 +53,8 @@ class App {
         this.initTypograf(this.el);
         this.setLayoutSettings();
         this.listenScroll();
+
+        this.form = Form();
 
         window.addEventListener('resize', this.listenResize.bind(this));
         window.addEventListener('scroll', this.listenScroll.bind(this));
