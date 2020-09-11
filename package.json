@@ -60,6 +60,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "bootstrap": "^4.5.2",
     "typograf": "^6.11.1",
     "validate.js": "^0.13.1"
   }
