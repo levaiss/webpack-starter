@@ -40,6 +40,7 @@ if (Helper.iOS()) {
 }
 
 import Form from "./modules/Form";
+import MMenu from "./modules/MMenu";
 
 class App {
     constructor({el}) {
@@ -55,6 +56,7 @@ class App {
         this.listenScroll();
 
         this.form = Form();
+        this.mmenu = new MMenu({elSelector: '.js-mmenu', actionSelector: '.js-mmenu-action'});
 
         window.addEventListener('resize', this.listenResize.bind(this));
         window.addEventListener('scroll', this.listenScroll.bind(this));

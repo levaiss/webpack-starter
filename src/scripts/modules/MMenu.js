@@ -1,11 +1,12 @@
 import {EventEmitter} from 'events';
 
 export default class MMenu extends EventEmitter {
-    constructor({elClass, actionClass}) {
+    constructor({elSelector, actionSelector}) {
         super();
 
-        this.el = document.querySelector(elClass);
-        this.actions = document.querySelectorAll(actionClass);
+        this.el = document.querySelector(elSelector);
+        this.actions = document.querySelectorAll(actionSelector);
+        this.body = document.body;
         this.opened = false;
 
         if (!this.el) throw (`[MMenu]: el not found!`);
@@ -27,12 +28,14 @@ export default class MMenu extends EventEmitter {
     open() {
         this.opened = true;
         this.el.classList.add('is-open');
+        this.body.classList.add('mmenu-opened');
         this.emit('mmenu-opened');
     }
 
     close() {
         this.opened = false;
         this.el.classList.remove('is-open');
+        this.body.classList.remove('mmenu-opened');
         this.emit('mmenu-closed');
     }
 
