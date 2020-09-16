@@ -1,5 +1,5 @@
 import validate from 'validate.js';
-validate.validators.presence.message = '^Это поле обязательное';
+validate.validators.presence.message = '^This field required';
 
 export default class Validate {
     constructor({form, constraints, callback}) {
@@ -47,7 +47,6 @@ export default class Validate {
         } else {
             formItem.classList.add('form__item--success');
         }
-
     }
 
     resetFormItem(item) {

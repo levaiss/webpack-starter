@@ -1,14 +1,26 @@
 export const name = {
     length: {
         minimum: 2,
-        maximum: 26,
-        tooShort: '^Слишком коротко(не менее %{count} символов)',
-        tooLong: '^Превышен лимин(не более %{count} символов)'
+        maximum: 16,
+        tooShort: '^Too short, at least %{count} characters',
+        tooLong: '^Exceeded the limit, no more than %{count} characters'
     },
     format: {
         pattern: '^(?:[а-яА-ЯёЁa-zA-Z]+[ -])*[а-яА-ЯёЁa-zA-Z]+$',
         flags: 'i',
-        message: '^Невалидный формат имени'
+        message: '^Invalid format'
+    }
+};
+
+export const full_name = {
+    length: {
+        minimum: 3,
+        maximum: 20
+    },
+    format: {
+        pattern: "^(?:[а-яА-ЯёЁa-zA-Z]+[ -])*[а-яА-ЯёЁa-zA-Z]+$",
+        flags: "i",
+        message: "^Invalid format"
     }
 };
 
@@ -24,6 +36,14 @@ export const nickname = {
         flags: 'i',
         message: '^Используйте, только буквы, дефис, символ подчеркивание и цифры 0-9'
     }
+};
+
+export const email = {
+    email: true
+};
+
+export const website = {
+    url: true
 };
 
 export const city = {
@@ -47,6 +67,7 @@ export const phone = {
         message: '^Только цифры в формате ХХХХХХХХХХ'
     }
 };
+
 export const card_number = {
     format: {
         pattern: '^([0-9]{4})?[ ]?([0-9]{4})[ ]?([0-9]{4})[ ]?([0-9]{4})$',
@@ -55,16 +76,23 @@ export const card_number = {
     }
 };
 
+export const disability = {
+    inclusion: {
+        within: [true],
+        message: '^You must confirm'
+    }
+};
+
 export const valid_age = {
     inclusion: {
         within: [true],
-        message: '^Подтвердите свой возраст'
+        message: '^Confirm your age'
     }
 };
 
 export const privacy_policy = {
     inclusion: {
         within: [true],
-        message: '^Ознакомьтесь с политикой конфиденциальности'
+        message: '^Confirm that you agree with the privacy policy'
     }
 };

@@ -1,5 +1,5 @@
 import Validate from "../plugins/Validate";
-import {name, city, privacy_policy} from '../config/constraints';
+import {name, city, privacy_policy} from '../config/validate-constraints';
 
 export default function () {
     const testForm = document.getElementById('testForm');
@@ -18,7 +18,7 @@ export default function () {
         console.log('All ok! ', payload);
 
         setTimeout(() => {
-            let serverErrors = { name: ['Тестовая ошибка с сервера!'] };
+            let serverErrors = { name: ['Test error from server!'] };
 
             formInstance.showErrors(serverErrors);
         }, 1000);

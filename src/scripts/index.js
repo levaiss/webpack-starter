@@ -1,7 +1,7 @@
 import '../styles/index.scss';
 import './icons';
 
-import Helper from './tools/Helpers';
+import {isIE, isIOS, isMobile} from './tools/Helpers';
 
 import Typograf from 'typograf';
 
@@ -29,15 +29,9 @@ const LAYOUT_SETTINGS = {
     }
 };
 
-if (Helper.isIE()) {
-    //Helper.createMatches();
-    //Helper.createClosest();
-    document.getElementById('app').classList.add('app--ie');
-}
+if (isIE) document.getElementById('app').classList.add('app--ie');
 
-if (Helper.iOS()) {
-    document.getElementById('app').classList.add('app--ios');
-}
+if (isIOS) document.getElementById('app').classList.add('app--ios');
 
 import Form from "./modules/Form";
 import MMenu from "./modules/MMenu";
@@ -66,7 +60,7 @@ class App {
         this.windowW = window.innerWidth;
         this.windowH = window.innerHeight;
 
-        this.device = (Helper.isMobile() && this.windowW < 1024) ? 'mobile' : 'desktop';
+        this.device = (isMobile() && this.windowW < 1024) ? 'mobile' : 'desktop';
 
         if (this.elClassList.contains(`app--${this.deviceData}`)) {
             this.elClassList.remove(`app--${this.deviceData}`);
