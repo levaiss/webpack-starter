@@ -1,11 +1,10 @@
 import axios from 'axios';
-import {API_URL} from "../tools/Url";
 
 let http = null;
 
 const createHttpInstance = (token = null, tokenType = 'Bearer') => {
   http = axios.create({
-    baseURL: API_URL,
+    baseURL: '/api',
   });
 
   if (token) setHttpToken(token, tokenType);

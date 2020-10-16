@@ -2,25 +2,13 @@ export const name = {
   length: {
     minimum: 2,
     maximum: 16,
-    tooShort: '^Too short, at least %{count} characters',
-    tooLong: '^Exceeded the limit, no more than %{count} characters'
+    tooShort: '^Слишком короко, не менее %{count} символов',
+    tooLong: '^Превышен лимит, не более %{count} символов'
   },
-  format: {
+  formatWithTrim: {
     pattern: '^(?:[а-яА-ЯёЁa-zA-Z]+[ -])*[а-яА-ЯёЁa-zA-Z]+$',
     flags: 'i',
-    message: '^Invalid format'
-  }
-};
-
-export const full_name = {
-  length: {
-    minimum: 3,
-    maximum: 20
-  },
-  format: {
-    pattern: "^(?:[а-яА-ЯёЁa-zA-Z]+[ -])*[а-яА-ЯёЁa-zA-Z]+$",
-    flags: "i",
-    message: "^Invalid format"
+    message: '^Некорректный формат'
   }
 };
 
@@ -39,11 +27,15 @@ export const nickname = {
 };
 
 export const email = {
-  email: true
+  email: {
+    message: '^Некорректный формат'
+  }
 };
 
 export const website = {
-  url: true
+  url: {
+    message: '^Некорректный формат'
+  }
 };
 
 export const city = {
@@ -76,23 +68,10 @@ export const card_number = {
   }
 };
 
-export const disability = {
-  inclusion: {
-    within: [true],
-    message: '^You must confirm'
-  }
-};
-
-export const valid_age = {
-  inclusion: {
-    within: [true],
-    message: '^Confirm your age'
-  }
-};
-
 export const privacy_policy = {
   inclusion: {
     within: [true],
-    message: '^Confirm that you agree with the privacy policy'
+    message: '^Требуется подтверждение'
   }
 };
+

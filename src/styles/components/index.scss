@@ -1,4 +1,21 @@
-@import "spiner";
-@import "preloader";
-@import "btn";
-@import "modal";
+@import "cards";
+
+/* Components group folder example:
+*
+* mixins.scss
+* card-product.scss
+* card-post.scss
+* etc.
+*
+*/
+
+/* Component example:
+.card-product {
+  $parent: &;
+  @include card-base();
+
+  &__content {}
+  &__title {}
+  &__price {}
+}
+*/

@@ -1,1 +1,1 @@
-import facebookIcon from '@/static/icons/icon-facebook.svg';
+import '@/static/icons/icon-facebook.svg';

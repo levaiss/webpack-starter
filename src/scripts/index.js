@@ -5,33 +5,7 @@ import {isIE, isIOS, isMobile} from './tools/Helpers';
 
 import Typograf from 'typograf';
 
-const LAYOUT_SETTINGS = {
-  desktop: {
-    defaultFont: 20,
-    defaultWidth: 1920,
-    defaultHeight: 1080,
-    minWidth: 1200,
-    minHeight: 640
-  },
-  tablet: {
-    defaultFont: 20,
-    defaultWidth: 720,
-    defaultHeight: 1024,
-    minWidth: 640,
-    minHeight: 800
-  },
-  mobile: {
-    defaultFont: 16,
-    defaultWidth: 320,
-    defaultHeight: 568,
-    minWidth: 320,
-    minHeight: 568
-  }
-};
-
-if (isIE) document.getElementById('app').classList.add('app--ie');
-
-if (isIOS) document.getElementById('app').classList.add('app--ios');
+import {LAYOUT_SETTINGS} from "./config/layout-settings";
 
 import Form from "./modules/Form";
 import MMenu from "./modules/MMenu";
@@ -43,18 +17,16 @@ class App {
     this.deviceData = null;
     this.deviceOrientation = null;
 
-    this.setLayoutSettings();
-
     this.initTypograf(this.el);
     this.setLayoutSettings();
-    this.listenScroll();
+    this.handlerScroll();
 
     this.form = Form();
     this.mmenu = new MMenu({elSelector: '.js-mmenu', actionSelector: '.js-mmenu-action'});
 
-    window.addEventListener('resize', this.listenResize.bind(this));
-    window.addEventListener('scroll', this.listenScroll.bind(this));
-    window.addEventListener('load', () => this.elClassList.add('app--loaded'));
+    window.addEventListener('resize', this.handlerResize.bind(this), {passive: true});
+    window.addEventListener('scroll', this.handlerScroll.bind(this), {passive: true});
+    window.addEventListener('load', this.handlerLoad.bind(this));
   }
 
   setLayoutSettings() {
@@ -87,7 +59,7 @@ class App {
     return result;
   }
 
-  listenResize() {
+  handlerResize() {
     let prevDeviceOrientation = this.deviceOrientation;
     this.deviceOrientation = this.getOrientation();
 
@@ -100,18 +72,21 @@ class App {
     }
   }
 
-  listenScroll() {
+  handlerScroll() {
     let scrollY = window.scrollY || window.pageYOffset;
   }
 
-  fSize() {
-    let device = (this.device === 'mobile' && this.windowW >= 640) ? 'tablet' : this.device;
+  handlerLoad() {
+    this.elClassList.add('app--loaded');
+  }
 
-    return (
-      LAYOUT_SETTINGS[device].defaultFont *
-      Math.min(Math.max(LAYOUT_SETTINGS[device].minWidth, this.windowW) / LAYOUT_SETTINGS[device].defaultWidth)
-    ).toFixed(2);
-    //Math.max(LAYOUT_SETTINGS[this.device].minHeight, this.windowH) / LAYOUT_SETTINGS[this.device].defaultHeight
+  fSize() {
+    let device = (this.device === 'mobile' && this.windowW >= LAYOUT_SETTINGS['tablet'].minWidth) ? 'tablet' : this.device;
+
+    let horizontalRatio = Math.max(LAYOUT_SETTINGS[device].minWidth, this.windowW) / LAYOUT_SETTINGS[device].defaultWidth;
+    let verticalRatio = Math.max(LAYOUT_SETTINGS[device].minHeight, this.windowH) / LAYOUT_SETTINGS[device].defaultHeight;
+
+    return (LAYOUT_SETTINGS[device].defaultFont * Math.min(horizontalRatio, verticalRatio)).toFixed(2);
   }
 
   vh() {
@@ -129,4 +104,9 @@ class App {
   }
 }
 
-window.App = new App({el: document.getElementById('app')});
+const APP_DOM = document.getElementById('app');
+
+if (isIE) APP_DOM.classList.add('app--ie');
+if (isIOS) APP_DOM.classList.add('app--ios');
+
+window.App = new App({el: APP_DOM});

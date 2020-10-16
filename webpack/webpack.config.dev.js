@@ -5,42 +5,51 @@ const common = require('./webpack.common.js');
 const ip = require('ip');
 
 module.exports = merge(common, {
-    mode: 'development',
-    devtool: 'cheap-eval-source-map',
-    output: {
-        chunkFilename: 'js/[name].chunk.js'
-    },
-    devServer: {
-        inline: true,
-        host: ip.address(),
-        port: 3003,
-        disableHostCheck: true
-    },
-    plugins: [
-        new Webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('development')
-        })
-    ],
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                include: Path.resolve(__dirname, '../src'),
-                enforce: 'pre',
-                loader: 'eslint-loader',
-                options: {
-                    emitWarning: true,
-                }
-            },
-            {
-                test: /\.js$/,
-                include: Path.resolve(__dirname, '../src'),
-                loader: 'babel-loader'
-            },
-            {
-                test: /\.s?css$/i,
-                use: ['style-loader', 'css-loader?sourceMap=true', 'sass-loader']
-            }
-        ]
+  mode: 'development',
+  devtool: 'cheap-eval-source-map',
+  output: {
+    chunkFilename: 'js/[name].chunk.js'
+  },
+  devServer: {
+    inline: true,
+    host: ip.address(),
+    port: 3003,
+    disableHostCheck: true,
+    /* Proxy settings
+    proxy: {
+      '/api': {
+        target: 'https://dev.com',
+        secure: false,
+        changeOrigin: true
+      }
     }
+     */
+  },
+  plugins: [
+    new Webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('development')
+    })
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        include: Path.resolve(__dirname, '../src'),
+        enforce: 'pre',
+        loader: 'eslint-loader',
+        options: {
+          emitWarning: true,
+        }
+      },
+      {
+        test: /\.js$/,
+        include: Path.resolve(__dirname, '../src'),
+        loader: 'babel-loader'
+      },
+      {
+        test: /\.s?css$/i,
+        use: ['style-loader', 'css-loader?sourceMap=true', 'sass-loader']
+      }
+    ]
+  }
 });
