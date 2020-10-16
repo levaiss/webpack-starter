@@ -1,98 +1,98 @@
 export const name = {
-    length: {
-        minimum: 2,
-        maximum: 16,
-        tooShort: '^Too short, at least %{count} characters',
-        tooLong: '^Exceeded the limit, no more than %{count} characters'
-    },
-    format: {
-        pattern: '^(?:[а-яА-ЯёЁa-zA-Z]+[ -])*[а-яА-ЯёЁa-zA-Z]+$',
-        flags: 'i',
-        message: '^Invalid format'
-    }
+  length: {
+    minimum: 2,
+    maximum: 16,
+    tooShort: '^Too short, at least %{count} characters',
+    tooLong: '^Exceeded the limit, no more than %{count} characters'
+  },
+  format: {
+    pattern: '^(?:[а-яА-ЯёЁa-zA-Z]+[ -])*[а-яА-ЯёЁa-zA-Z]+$',
+    flags: 'i',
+    message: '^Invalid format'
+  }
 };
 
 export const full_name = {
-    length: {
-        minimum: 3,
-        maximum: 20
-    },
-    format: {
-        pattern: "^(?:[а-яА-ЯёЁa-zA-Z]+[ -])*[а-яА-ЯёЁa-zA-Z]+$",
-        flags: "i",
-        message: "^Invalid format"
-    }
+  length: {
+    minimum: 3,
+    maximum: 20
+  },
+  format: {
+    pattern: "^(?:[а-яА-ЯёЁa-zA-Z]+[ -])*[а-яА-ЯёЁa-zA-Z]+$",
+    flags: "i",
+    message: "^Invalid format"
+  }
 };
 
 export const nickname = {
-    length: {
-        minimum: 3,
-        maximum: 26,
-        tooShort: '^Слишком коротко(не менее %{count} символов)',
-        tooLong: '^Превышен лимин(не более %{count} символов)'
-    },
-    format: {
-        pattern: '[-_а-яА-ЯёЁa-zA-Z0-9]+',
-        flags: 'i',
-        message: '^Используйте, только буквы, дефис, символ подчеркивание и цифры 0-9'
-    }
+  length: {
+    minimum: 3,
+    maximum: 26,
+    tooShort: '^Слишком коротко(не менее %{count} символов)',
+    tooLong: '^Превышен лимин(не более %{count} символов)'
+  },
+  format: {
+    pattern: '[-_а-яА-ЯёЁa-zA-Z0-9]+',
+    flags: 'i',
+    message: '^Используйте, только буквы, дефис, символ подчеркивание и цифры 0-9'
+  }
 };
 
 export const email = {
-    email: true
+  email: true
 };
 
 export const website = {
-    url: true
+  url: true
 };
 
 export const city = {
-    length: {
-        minimum: 2,
-        maximum: 20,
-        tooShort: '^Слишком коротко(не менее %{count} символов)',
-        tooLong: '^Превышен лимин(не более %{count} символов)'
-    },
-    format: {
-        pattern: '[-а-яА-ЯёЁa-zA-Z]+',
-        flags: 'i',
-        message: '^Используйте, только буквы и дефис'
-    }
+  length: {
+    minimum: 2,
+    maximum: 20,
+    tooShort: '^Слишком коротко(не менее %{count} символов)',
+    tooLong: '^Превышен лимин(не более %{count} символов)'
+  },
+  format: {
+    pattern: '[-а-яА-ЯёЁa-zA-Z]+',
+    flags: 'i',
+    message: '^Используйте, только буквы и дефис'
+  }
 };
 
 export const phone = {
-    format: {
-        pattern: '^[+][7][(]?([0-9]{3})?[)]([0-9]{3})[-]?([0-9]{2})[-]?([0-9]{2})$',
-        flags: 'i',
-        message: '^Только цифры в формате ХХХХХХХХХХ'
-    }
+  format: {
+    pattern: '^[+][7][(]?([0-9]{3})?[)]([0-9]{3})[-]?([0-9]{2})[-]?([0-9]{2})$',
+    flags: 'i',
+    message: '^Только цифры в формате ХХХХХХХХХХ'
+  }
 };
 
 export const card_number = {
-    format: {
-        pattern: '^([0-9]{4})?[ ]?([0-9]{4})[ ]?([0-9]{4})[ ]?([0-9]{4})$',
-        flags: 'i',
-        message: '^Не соблюден формат'
-    }
+  format: {
+    pattern: '^([0-9]{4})?[ ]?([0-9]{4})[ ]?([0-9]{4})[ ]?([0-9]{4})$',
+    flags: 'i',
+    message: '^Не соблюден формат'
+  }
 };
 
 export const disability = {
-    inclusion: {
-        within: [true],
-        message: '^You must confirm'
-    }
+  inclusion: {
+    within: [true],
+    message: '^You must confirm'
+  }
 };
 
 export const valid_age = {
-    inclusion: {
-        within: [true],
-        message: '^Confirm your age'
-    }
+  inclusion: {
+    within: [true],
+    message: '^Confirm your age'
+  }
 };
 
 export const privacy_policy = {
-    inclusion: {
-        within: [true],
-        message: '^Confirm that you agree with the privacy policy'
-    }
+  inclusion: {
+    within: [true],
+    message: '^Confirm that you agree with the privacy policy'
+  }
 };
