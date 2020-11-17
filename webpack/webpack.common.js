@@ -20,7 +20,7 @@ module.exports = {
     app: Path.resolve(__dirname, '../src/scripts/index.js')
   },
   output: {
-    path: Path.join(__dirname, '../build'),
+    path: Path.join(__dirname, '../../web'),
     filename: 'js/[name].js'
   },
   /* Chunks settings
