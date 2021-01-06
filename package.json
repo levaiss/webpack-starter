@@ -59,7 +59,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.5.2",
     "inputmask": "^5.0.5",
     "typograf": "^6.11.1",
